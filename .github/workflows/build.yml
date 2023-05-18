@@ -14,7 +14,7 @@ jobs:
       - name: Run a databricks notebook
         uses: databricks/run-notebook@v0
         with:
-          local-notebook-path: notebooks/databricks/MLFlow_Train.ipynb
+          local-notebook-path: MLFlow_Train.ipynb
           databricks-host: ${{ vars.DATABRICKS_HOST }}
           databricks-token: ${{ secrets.DATABRICKS_TOKEN }}
           git-commit: ${{ github.event.pull_request.head.sha || github.sha }}
