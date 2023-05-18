@@ -1,10 +1,8 @@
-name: Run a notebook in databricks on PRs
+name: Run a notebook in databricks on every commit, creating a new experiment run
 
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-      branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -19,7 +17,7 @@ jobs:
           local-notebook-path: notebooks/databricks/MLFlow_Train.ipynb
           databricks-host: ${{ vars.DATABRICKS_HOST }}
           databricks-token: ${{ secrets.DATABRICKS_TOKEN }}
-          git-commit: ${{ github.event.pull_request.head.sha }}
+          git-commit: ${{ github.event.pull_request.head.sha || github.sha }}
           new-cluster-json: >
             {
               "num_workers": 1,
