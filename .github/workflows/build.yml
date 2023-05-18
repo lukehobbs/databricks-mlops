@@ -24,7 +24,6 @@ jobs:
           new-cluster-json: >
             {
               "num_workers": 1,
-              "cluster_name": "actions-test",
               "spark_version": "5.5.x-scala2.11",
               "node_type_id": "i3.xlarge",
               "spark_env_vars": {
