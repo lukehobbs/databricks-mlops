@@ -1,3 +1,4 @@
-test/*.csv
-train/*.csv
-output/*.csv
+data/ml/processing/test/*.csv
+data/ml/processing/train/*.csv
+data/ml/processing/output/*.csv
+data/ml/processing/validation/*.csv
